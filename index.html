@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //         Задание 1
+        // Создайте функцию которая возводит переданное число в куб, необходимо вывести в консоль результат 2^3 степени + 3 ^ 3 степени
+
+        const cubeNumber = (number) => number ** 3;
+        console.log(cubeNumber(2) + cubeNumber(3));
+
+        //          Задание 2
+        // Пользователь вводит с клавиатуры число, если ввёл текст, необходимо вывести что значение задано неверно
+        // Создать фукнцию, которая высчитывает 13% от данного числа и выводит в консоль текст "Размер заработной платы за вычетом налогов равен значение"
+
+        const availableSalary = (userSalary) => userSalary * 0.87;
+
+        function getUserSalary() {
+            const salary = Number(prompt('Input salary'));
+            if (isNaN(salary)) {
+                console.log('not a number');
+            } else {
+                console.log(`Размер заработной платы за вычетом налогов равен ${availableSalary(salary)}`);
+            }
+        }
+
+        getUserSalary();
+
+        //          Задание 3
+        // Пользователь с клавиатуры вводит 3 числа, необходимо создать функцию, которая определяет максимальное значение среди этих чисел
+
+        const getNumber = () => number = Number(prompt('Input number'));
+
+        const findMinNumber = (number1, number2, number3) => {
+            if (isNaN(number1) || isNaN(number2) || isNaN(number3)) {
+                return NaN;
+            } else
+                if (number1 < number2 && number1 < number3) {
+                    return number1;
+                } else if (number2 < number1 && number2 < number3) {
+                    return number2;
+                } else {
+                    return number3;
+                }
+        }
+        function minNumberOutput(param) {
+            if (isNaN(param)) {
+                console.log('Not a number. Try again');
+            } else {
+                console.log(`${param} - минимальное число`);
+            }
+        }
+
+        minNumberOutput(findMinNumber(getNumber(), getNumber(), getNumber()));
+
+
+
+        //          Задание 4
+        // Необходимо реализовать четыре функции, каждая функция должна принимать по два числа и выполнять одну из операций (каждая функция выполняет одну из них):
+        // 1. Сложение
+        // 2. Разность
+        // 3. Умножение
+        // 4. Деление
+        // Необходимо сделать так, чтобы функция вернула число, например выражение console.log(sum(2, 6)); должно вывести число 8 в консоль (sum - функция сложения в данном примере, ваши названия функций могут отличаться). Округлять значения, которые возвращают функции не нужно, однако, обратите внимание на разность, функция должна вычесть из большего числа меньшее, либо вернуть 0, если числа равны. Функциям всегда передаются корректные числа, проверки на NaN, Infinity делать не нужно.
+
+        const sum = (number1, number2) => number1 + number2;
+        const dif = (number1, number2) => {
+            if (number1 > number2) {
+                return number1 - number2;
+            } else {
+                return number2 - number1;
+            }
+        }
+        const multiplication = (number1, number2) => number1 * number2;
+        const division = (number1, number2) => number1 / number2;
+
+        console.log(sum(1, 2));
+        console.log(dif(1, 3));
+        console.log(dif(6, 1));
+        console.log(dif(8, 8));
+        console.log(multiplication(2, 6));
+        console.log(division(10, 2));
+
+
+    </script>
+
+</body>
+
+</html>
